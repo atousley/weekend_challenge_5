@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Farm Finder</title>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/barnyardController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/horseController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/pigController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/birdController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/catController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/dogController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/reptileController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/smallfurryController.js"></script>
+
+    <!--<link rel="stylesheet" href="/styles/style.css" />-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>-->
+
+</head>
+
+<body ng-app="myApp">
+<div class="container">
+    <header ng-include="'/templates/header.html'"></header>
+    <div ng-include="'/templates/nav.html'"></div>
+
+    <main ng-view></main>
+
+</div>
+
+</body>
+</html>
