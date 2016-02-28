@@ -50,7 +50,7 @@ app.post('/data', function(req, res) {
     pg.connect(connectionString, function (err, client, done) {
         client.query("INSERT INTO favorites " +
             "(animal, breed, photo, name, age, sex, description, contact_city, contact_state) " +
-            "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+            "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id",
             [addFavorite.animal, addFavorite.breed, addFavorite.photo, addFavorite.name, addFavorite.age, addFavorite.sex,
                 addFavorite.description, addFavorite.city, addFavorite.state],
             function (err, result) {
