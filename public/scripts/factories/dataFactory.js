@@ -1,7 +1,6 @@
 myApp.factory('DataFactory', ['$http', function($http) {
 
     var favorites = undefined;
-    var count = 0;
 
     var postFavorite = function(data) {
         //console.log(data);
@@ -19,14 +18,6 @@ myApp.factory('DataFactory', ['$http', function($http) {
         return promise;
     };
 
-    var countFavorites = function() {
-        console.log('count faves get function firing');
-        var promise = $http.get('/count').then(function(response) {
-            count = response.data;
-            console.log('count response: ', favorites);
-        });
-        return promise;
-    }
 
     var publicApi = {
         favoriteList: function() {
@@ -49,9 +40,6 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
             //console.log(favorite);
             postFavorite(favorite);
-        },
-        faveCount: function() {
-            return countFavorites();
         }
 
     };
