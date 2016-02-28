@@ -1,0 +1,25 @@
+img {
+    height: 250px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navMain {
+    margin-top: 25px;
+}
+
+.navMain li {
+    display: inline;
+    margin: 15px;
+}
+
+.count li {
+    color: black;
+    font-size: 18px;
+}
+
+.animalInfo {
+    margin-bottom: 25px;
+}
