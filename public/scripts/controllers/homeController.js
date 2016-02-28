@@ -16,7 +16,6 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
             var query = 'pet.getRandom';
             query += '?key=' + key;
             query += '&animal=' + animal;
-            //change animal to be dynamically coded for 1 pet finding controller.
             query += '&output=basic';
             query += '&format=json';
 
@@ -36,6 +35,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 
 //        pick_animal: null,
 //        animals: [
+//          change array to just an array of animal types???
 //            {id: '1', name: 'dog'},
 //            {id: '2', name: 'cat'},
 //            {id: '3', name: 'bird'}

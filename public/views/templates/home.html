@@ -7,11 +7,16 @@
         <option>Select Pet Type</option>
         <option value="dog">Dog</option>
         <option value="cat">Cat</option>
+        <option value="smallfurry">Small &amp Furry</option>
+        <option value="reptile">Reptile</option>
+        <option value="bird">Bird</option>
+        <option value="horse">Horse</option>
+        <option value="pig">Pig</option>
+        <option value="barnyard">Barnyard</option>
     </select>
-
 </div>
 
-<h1>Animal: {{animal.breeds.breed.$t}}</h1>
+<h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
 <img ng-src="{{animal.media.photos.photo[2].$t}}" />
 
 <div class="info_container">

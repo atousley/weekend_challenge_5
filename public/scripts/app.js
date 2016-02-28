@@ -13,42 +13,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: '/views/templates/home.html',
             controller: 'HomeController'
         })
-        .when('/animal', {
-            templateUrl: '/views/templates/animal.html',
-            controller: 'AnimalController'
-        })
-        .when('/horse', {
-            templateUrl: '/views/templates/horse.html',
-            controller: 'HorseController'
-        })
-        .when('/pig', {
-            templateUrl: '/views/templates/pig.html',
-            controller: 'PigController'
-        })
-        .when('/barnyard', {
-            templateUrl: '/views/templates/barnyard.html',
-            controller: 'BarnyardController'
-        })
-        .when('/bird', {
-            templateUrl: '/views/templates/bird.html',
-            controller: 'BirdController'
-        })
-        .when('/cat', {
-            templateUrl: '/views/templates/cat.html',
-            controller: 'CatController'
-        })
-        .when('/dog', {
-            templateUrl: '/views/templates/dog.html',
-            controller: 'DogController'
-        })
-        .when('/reptile', {
-            templateUrl: '/views/templates/reptile.html',
-            controller: 'ReptileController'
-        })
-        .when('/smallfurry', {
-            templateUrl: '/views/templates/smallfurry.html',
-            controller: 'SmallfurryController'
-        })
         .otherwise({
             redirectTo: 'home'
         });
