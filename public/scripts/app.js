@@ -10,7 +10,12 @@ myApp.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
         .when('/home', {
-            templateUrl: '/views/templates/home.html'
+            templateUrl: '/views/templates/home.html',
+            controller: 'HomeController'
+        })
+        .when('/animal', {
+            templateUrl: '/views/templates/animal.html',
+            controller: 'AnimalController'
         })
         .when('/horse', {
             templateUrl: '/views/templates/horse.html',

@@ -1,6 +1,7 @@
 myApp.controller('BarnyardController', ['$scope', '$http', function($scope, $http) {
     $scope.data = {};
 
+
     function petFinder() {
         // API key 705cf21bd32eabe8c89315ec944817be
         var key = '705cf21bd32eabe8c89315ec944817be';
@@ -9,6 +10,7 @@ myApp.controller('BarnyardController', ['$scope', '$http', function($scope, $htt
         var query = 'pet.getRandom';
         query += '?key=' + key;
         query += '&animal=barnyard';
+        //change animal to be dynamically coded for 1 pet finding controller.
         query += '&output=basic';
         query += '&format=json';
 

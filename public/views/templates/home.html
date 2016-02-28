@@ -2,15 +2,47 @@
 <h1>Click to find an animal to your farm!</h1>
 </div>
 
+<div class="dropdown">
+    <select name="animal_list" ng-change="getAnimal()" ng-model="animal">
+        <option>Select Pet Type</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+    </select>
 
-<li><a href="#horse">Horses</a></li>
-<li><a href="#pig">Pigs</a></li>
-<li><a href="#barnyard">Barnyard Animals</a></li>
-<li><a href="#bird">Birds</a></li>
-<li><a href="#cat">Cats</a></li>
-<li><a href="#dog">Dogs</a></li>
-<li><a href="#reptile">Reptiles</a></li>
-<li><a href="#smallfurry">Small and Furry</a></li>
+</div>
+
+<h1>Animal: {{animal.breeds.breed.$t}}</h1>
+<img ng-src="{{animal.media.photos.photo[2].$t}}" />
+
+<div class="info_container">
+    <h2>Name: {{animal.name.$t}}</h2>
+    <h3>Age: {{animal.age.$t}}</h3>
+    <h3>Sex: {{animal.sex.$t}}</h3>
+    <p>Description: {{animal.description.$t}}</p>
+    <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
+</div>
+
+
+
+<!--<form name="animal_selection">-->
+<!--<label for="pick_animal">Pick an Animal Type: </label>-->
+<!--<select name="pick_animal" id="pick_animal" ng-change="getAnimal(data.pick_animal)" ng-model="data.pick_animal">-->
+<!--<option ng-repeat="animal in data.animals" value="{{animal.name}}">{{animal.name}}</option>-->
+<!--</select>-->
+<!--</form>-->
+<!--<tt>You Selected: {{data.pick_animal}}</tt>-->
+
+<!--<li><a href="#horse">Horses</a></li>-->
+<!--<li><a href="#pig">Pigs</a></li>-->
+<!--<li><a href="#barnyard">Barnyard Animals</a></li>-->
+<!--<li><a href="#bird">Birds</a></li>-->
+<!--<li><a href="#cat">Cats</a></li>-->
+<!--<li><a href="#dog">Dogs</a></li>-->
+<!--<li><a href="#reptile">Reptiles</a></li>-->
+<!--<li><a href="#smallfurry">Small and Furry</a></li>-->
+
+<!--<button class="gg_button" ng-click="showPhoto()">Click to see another gif!</button>-->
+<!--<img ng-show="showThis" ng-src="../../images/daria2.gif">-->
 
 
 
