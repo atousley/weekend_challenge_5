@@ -11,11 +11,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: '/views/templates/home.html',
-            controller: 'HomeController'
+        })
+        .when('/animalPage', {
+            templateUrl: '/views/templates/animalPage.html',
+            controller: 'AnimalController'
         })
         .when('/favorites', {
             templateUrl: '/views/templates/favorites.html',
-            //controller: 'HomeController'
+            controller: 'FavoritesController'
         })
         .otherwise({
             redirectTo: 'home'

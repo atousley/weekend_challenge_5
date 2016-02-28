@@ -13,9 +13,25 @@ if(process.env.DATABASE_URL != undefined) {
     connectionString = 'postgres://localhost:5432/weekend_5_challenge';
 }
 
-//app.get('/data', function(req, res) {
-//    res.send({message: 'hello'});
-//});
+app.get('/data', function(req, res) {
+    var results = [];
+    pg.connect(connectionString, function(err, client, done) {
+        var query = client.query('SELECT * FROM favorites');
+
+        query.on('row', function(row) {
+            results.push(row);
+        });
+
+        query.on('end', function() {
+            done();
+            return res.json(results);
+        });
+
+        if(err) {
+            console.log(err);
+        }
+    });
+});
 
 app.post('/data', function(req, res) {
     //res.send(req.params.number);

@@ -1,10 +1,28 @@
-<h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
-<img ng-src="{{animal.media.photos.photo[2].$t}}" />
+<div class="dropdown">
+    <select name="animal_list" ng-change="getAnimal()" ng-model="animal">
+        <!--<option>Select Pet Type</option>-->
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="smallfurry">Small &amp Furry</option>
+        <option value="reptile">Reptile</option>
+        <option value="bird">Bird</option>
+        <option value="horse">Horse</option>
+        <option value="pig">Pig</option>
+        <option value="barnyard">Barnyard</option>
+    </select>
+</div>
 
-<div class="info_container">
-    <h2>Name: {{animal.name.$t}}</h2>
-    <h3>Age: {{animal.age.$t}}</h3>
-    <h3>Sex: {{animal.sex.$t}}</h3>
-    <p>Description: {{animal.description.$t}}</p>
-    <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
+<div ng-if="showThis == true">
+    <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
+    <img ng-src="{{animal.media.photos.photo[2].$t}}" />
+
+    <div class="info_container">
+        <h2>Name: {{animal.name.$t}}</h2>
+        <h3>Age: {{animal.age.$t}}</h3>
+        <h3>Sex: {{animal.sex.$t}}</h3>
+        <p>Description: {{animal.description.$t}}</p>
+        <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
+    </div>
+    <button ng-click="favorite()">Add To Favorites!</button>
+
 </div>

@@ -1,4 +1,4 @@
-myApp.controller('HomeController', ['$scope', 'DataFactory','$http', function($scope, DataFactory, $http) {
+myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function($scope, DataFactory, $http) {
     $scope.showThis = false;
 
     $scope.dataFactory = DataFactory;
