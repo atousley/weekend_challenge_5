@@ -1,5 +1,7 @@
-myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('HomeController', ['$scope', 'DataFactory','$http', function($scope, DataFactory, $http) {
     $scope.showThis = false;
+
+    $scope.dataFactory = DataFactory;
 
     $scope.data = {};
 
@@ -37,6 +39,14 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
         }
 
         petFinder();
+
+    $scope.favorite = function() {
+        var name = $scope.animal.name.$t;
+
+        $scope.dataFactory.addFavorite(name);
+
+        console.log('working');
+    }
 }]);
 
 //        pick_animal: null,

@@ -1,16 +1,42 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var pg = require('pg');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/data', function(req, res) {
-    res.send({message: 'hello'});
-});
+var connectionString = '';
+if(process.env.DATABASE_URL != undefined) {
+    connectionString = process.env.DATABASE_URL + 'ssl';
+} else {
+    connectionString = 'postgres://localhost:5432/weekend_5_challenge';
+}
 
-app.post('/data/:number', function(req, res) {
-    res.send(req.params.number);
+//app.get('/data', function(req, res) {
+//    res.send({message: 'hello'});
+//});
+
+app.post('/data', function(req, res) {
+    //res.send(req.params.number);
+    var addFavorite = {
+        favorite: req.body.name
+    };
+
+    pg.connect(connectionString, function (err, client, done) {
+        client.query("INSERT INTO favorites (name) VALUES ($1)",
+            [addFavorite.favorite],
+            function (err, result) {
+                done();
+
+                if (err) {
+                    console.log("Error inserting data: ", err);
+                    res.send(false);
+                } else {
+                    res.send(result);
+                }
+            });
+    });
 });
 
 // Serve back static files

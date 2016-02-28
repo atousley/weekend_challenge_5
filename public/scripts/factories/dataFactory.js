@@ -1,14 +1,22 @@
 myApp.factory('DataFactory', ['$http', function($http) {
-    var chosenAnimal = {};
 
-    var getSelected = function () {
-
-    }
+    var postFavorite = function(data) {
+        //console.log(data);
+        $http.post('/data', data).then(function(response) {
+            console.log('posting');
+        });
+    };
 
 
     var publicApi = {
-
-    }
+        addFavorite: function(name) {
+            var favorite = {};
+            favorite.name = name;
+            console.log(favorite)
+            postFavorite(favorite);
+        }
+    };
+    return publicApi;
 
 }]);
 
