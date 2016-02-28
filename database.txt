@@ -1,0 +1,12 @@
+CREATE TABLE favorites (
+id SERIAL PRIMARY KEY NOT NULL,
+animal varchar(75),
+breed varchar(75),
+photo varchar(200),
+name varchar(150),
+age varchar(75),
+sex varchar(75),
+description varchar(15000),
+contact_city varchar(75),
+contact_state varchar(25)
+)

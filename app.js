@@ -36,12 +36,23 @@ app.get('/data', function(req, res) {
 app.post('/data', function(req, res) {
     //res.send(req.params.number);
     var addFavorite = {
-        favorite: req.body.name
+        animal: req.body.animal,
+        breed: req.body.breed,
+        photo: req.body.photo,
+        name: req.body.name,
+        age: req.body.age,
+        sex: req.body.sex,
+        description: req.body.description,
+        city: req.body.city,
+        state: req.body.state
     };
 
     pg.connect(connectionString, function (err, client, done) {
-        client.query("INSERT INTO favorites (name) VALUES ($1)",
-            [addFavorite.favorite],
+        client.query("INSERT INTO favorites " +
+            "(animal, breed, photo, name, age, sex, description, contact_city, contact_state) " +
+            "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+            [addFavorite.animal, addFavorite.breed, addFavorite.photo, addFavorite.name, addFavorite.age, addFavorite.sex,
+                addFavorite.description, addFavorite.city, addFavorite.state],
             function (err, result) {
                 done();
 

@@ -10,7 +10,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     };
 
     var getFavorites = function() {
-        console.log('get function firing')
+        console.log('get function firing');
         var promise = $http.get('/data').then(function(response) {
             favorites = response.data;
             console.log('response: ', favorites);
@@ -23,12 +23,21 @@ myApp.factory('DataFactory', ['$http', function($http) {
             return favorites;
         },
         retrieveFavorites: function() {
-            getFavorites();
+            return getFavorites();
         },
-        addFavorite: function(name) {
+        addFavorite: function(animal, breed, photo, name, age, sex, description, city, state) {
             var favorite = {};
+            favorite.animal = animal;
+            favorite.breed = breed;
+            favorite.photo = photo;
             favorite.name = name;
-            console.log(favorite);
+            favorite.age = age;
+            favorite.sex = sex;
+            favorite.description = description;
+            favorite.city = city;
+            favorite.state = state;
+
+            //console.log(favorite);
             postFavorite(favorite);
         }
     };

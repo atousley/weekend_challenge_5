@@ -1,9 +1,3 @@
-//API Key
-//705cf21bd32eabe8c89315ec944817be
-//API Secret
-//74edd6bc528b55fc14f7f9f7e3c9d8d3
-//API Status
-//Active
 var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$routeProvider', function($routeProvider) {

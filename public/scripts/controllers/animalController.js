@@ -41,13 +41,23 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
         petFinder();
 
     $scope.favorite = function() {
+        var animal = $scope.animal.animal.$t;
+        var breed = $scope.animal.breeds.breed.$t;
+        var age = $scope.animal.age.$t;
+        var sex = $scope.animal.sex.$t;
+        var photo = $scope.animal.media.photos.photo[2].$t;
+        var description = $scope.animal.description.$t;
+        var city = $scope.animal.contact.city.$t;
+        var state = $scope.animal.contact.state.$t;
         var name = $scope.animal.name.$t;
 
-        $scope.dataFactory.addFavorite(name);
+        $scope.dataFactory.addFavorite(animal, breed, photo, name, age, sex, description, city, state);
 
         console.log('working');
     }
 }]);
+
+
 
 //        pick_animal: null,
 //        animals: [

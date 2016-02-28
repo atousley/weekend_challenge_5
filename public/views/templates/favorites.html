@@ -1,8 +1,15 @@
 <h1>My Faves</h1>
 
 <div ng-repeat="favorite in favorites">
-    <p>{{favorite.name}}</p>
+    <h1>{{favorite.animal}} Type: {{favorite.breed}}</h1>
+    <img ng-src="{{favorite.photo}}" />
+    <h2>Name: {{favorite.name}}</h2>
+    <h3>Age: {{favorite.age}}</h3>
+    <h3>Sex: {{favorite.sex}}</h3>
+    <p>Description: {{favorite.description}}</p>
+    <p>City: {{favorite.city}} State: {{favorite.state}}</p>
 </div>
+
 
 <!--<h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>-->
 <!--<img ng-src="{{animal.media.photos.photo[2].$t}}" />-->
