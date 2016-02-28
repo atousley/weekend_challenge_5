@@ -1,10 +1,16 @@
 myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
+    $scope.showThis = false;
+
     $scope.data = {};
 
     $scope.getAnimal = function () {
         var animalType = $scope.animal;
         console.log(animalType);
+
+        $scope.showThis = true;
+
         petFinder(animalType);
+
     };
 
     //console.log($scope.data);

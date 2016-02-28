@@ -4,7 +4,7 @@
 
 <div class="dropdown">
     <select name="animal_list" ng-change="getAnimal()" ng-model="animal">
-        <option>Select Pet Type</option>
+        <!--<option>Select Pet Type</option>-->
         <option value="dog">Dog</option>
         <option value="cat">Cat</option>
         <option value="smallfurry">Small &amp Furry</option>
@@ -16,6 +16,11 @@
     </select>
 </div>
 
+<div class="favorite_link">
+    <a href="#favorites">Favorites</a>
+</div>
+
+<div ng-if="showThis == true">
 <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
 <img ng-src="{{animal.media.photos.photo[2].$t}}" />
 
@@ -26,7 +31,7 @@
     <p>Description: {{animal.description.$t}}</p>
     <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
 </div>
-
+</div>
 
 
 <!--<form name="animal_selection">-->
@@ -36,19 +41,3 @@
 <!--</select>-->
 <!--</form>-->
 <!--<tt>You Selected: {{data.pick_animal}}</tt>-->
-
-<!--<li><a href="#horse">Horses</a></li>-->
-<!--<li><a href="#pig">Pigs</a></li>-->
-<!--<li><a href="#barnyard">Barnyard Animals</a></li>-->
-<!--<li><a href="#bird">Birds</a></li>-->
-<!--<li><a href="#cat">Cats</a></li>-->
-<!--<li><a href="#dog">Dogs</a></li>-->
-<!--<li><a href="#reptile">Reptiles</a></li>-->
-<!--<li><a href="#smallfurry">Small and Furry</a></li>-->
-
-<!--<button class="gg_button" ng-click="showPhoto()">Click to see another gif!</button>-->
-<!--<img ng-show="showThis" ng-src="../../images/daria2.gif">-->
-
-
-
-
