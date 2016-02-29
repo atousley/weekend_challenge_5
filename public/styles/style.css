@@ -8,13 +8,15 @@ body {
     margin: 5%;
 }
 
-.homePage {
-    /*display: flex;*/
-    /*justify-content: center;*/
+.homePage h1 {
+    text-align: center;
+    margin-top: 5%;
 }
 
 .homePage img {
+    display: block;
     max-width: 40%;
+    margin: auto;
 }
 
 .animalImg {

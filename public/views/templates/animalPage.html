@@ -1,18 +1,13 @@
 <h1>Find a Pet</h1>
     <div class="dropdown">
         <form>
-            <select ng-change="getAnimal()" ng-model="animal_list">
-                <option value="">Select Pet Type</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="smallfurry">Small &amp Furry</option>
-                <option value="reptile">Reptile</option>
-                <option value="bird">Bird</option>
-                <option value="horse">Horse</option>
-                <option value="pig">Pig</option>
-                <option value="barnyard">Barnyard</option>
-            </select>
+        <label>Pick an Animal Type:
+        <select ng-model="animal_list" ng-options="animal.name for animal in animals" ng-change="getAnimal()">
+            <option  value="">---Select---</option>
+        </select>
+        </label>
         </form>
+        <tt>You Selected: {{animal_list.name}}</tt>
     </div>
 
     <div ng-if="showThis == true">
@@ -30,14 +25,3 @@
             </div>
     </div>
 
-<!--use ngOptions for reference-->
-<!--<form name="animal_selection">-->
-<!--<label for="pick_animal">Pick an Animal Type: </label>-->
-<!--<select name="pick_animal" id="pick_animal" ng-model="animal">-->
-<!--<option ng-options="animal for animal.name in animals" value="{{animal.name}}">{{animal.name}}</option>-->
-<!--</select>-->
-<!--</form>-->
-<!--<tt>You Selected: {{data.pick_animal}}</tt>-->
-
-<!--ng-change="getAnimal(data.pick_animal)"-->
-<!--don't need name or id-->

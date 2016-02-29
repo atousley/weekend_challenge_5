@@ -3,10 +3,19 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 
     $scope.dataFactory = DataFactory;
 
-    $scope.data = {};
+    $scope.animals = [
+        {name: 'dog'},
+        {name: 'cat'},
+        {name: 'smallfurry'},
+        {name: 'reptile'},
+        {name: 'bird'},
+        {name: 'horse'},
+        {name: 'pig'},
+        {name: 'barnyard'}
+    ];
 
     $scope.getAnimal = function () {
-        var animalType = $scope.animal_list;
+        var animalType = $scope.animal_list.name;
         $scope.showThis = true;
         $scope.message = '';
         petFinder(animalType);
@@ -52,14 +61,6 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 }]);
 
 
-//        animal: null,
-//        animals: [
-//          change array to just an array of animal types???
-//            {id: '1', name: 'dog'},
-//            {id: '2', name: 'cat'},
-//            {id: '3', name: 'bird'}
-//        ]
-//    };
-//          $scope.selected = '';
+//
 //
 //}]);
