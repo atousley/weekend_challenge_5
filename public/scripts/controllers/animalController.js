@@ -59,7 +59,7 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 
 
 
-//        pick_animal: null,
+//        animal: null,
 //        animals: [
 //          change array to just an array of animal types???
 //            {id: '1', name: 'dog'},
@@ -67,5 +67,6 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 //            {id: '3', name: 'bird'}
 //        ]
 //    };
+//          $scope.selected = '';
 //
 //}]);

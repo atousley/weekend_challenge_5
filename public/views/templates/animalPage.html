@@ -1,8 +1,6 @@
-<div class="container">
-
-    <div class="row">
-        <h1>Find a Pet</h1>
-        <div class="dropdown">
+<h1>Find a Pet</h1>
+    <div class="dropdown">
+        <form>
             <select name="animal_list" ng-change="getAnimal()" ng-model="animal">
                 <option value="">Select Pet Type</option>
                 <option value="dog">Dog</option>
@@ -14,39 +12,31 @@
                 <option value="pig">Pig</option>
                 <option value="barnyard">Barnyard</option>
             </select>
-        </div>
+        </form>
     </div>
 
-    <div class="row animalInfo">
-        <div ng-if="showThis == true">
-            <div class="row text-right fave_button">
-                <button ng-click="favorite()">Add To Favorites!</button>
-            </div>
+    <div ng-if="showThis == true">
+        <button ng-click="favorite()">Add To Favorites!</button>
 
-            <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
-
-            <div class="col-md-6">
-                <img ng-src="{{animal.media.photos.photo[2].$t}}" />
+        <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
+         <img ng-src="{{animal.media.photos.photo[2].$t}}" />
+            <div class="info_container">
+                <h2>Name: {{animal.name.$t}}</h2>
+                <h3>Age: {{animal.age.$t}}</h3>
+                <h3>Sex: {{animal.sex.$t}}</h3>
+                <p>Description: {{animal.description.$t}}</p>
+                <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
             </div>
-            <div class="col-md-6">
-                <div class="info_container">
-                    <h2>Name: {{animal.name.$t}}</h2>
-                    <h3>Age: {{animal.age.$t}}</h3>
-                    <h3>Sex: {{animal.sex.$t}}</h3>
-                    <p>Description: {{animal.description.$t}}</p>
-                    <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
-                </div>
-            </div>
-        </div>
     </div>
 
-</div>
-
-
+<!--use ngOptions for reference-->
 <!--<form name="animal_selection">-->
 <!--<label for="pick_animal">Pick an Animal Type: </label>-->
-<!--<select name="pick_animal" id="pick_animal" ng-change="getAnimal(data.pick_animal)" ng-model="data.pick_animal">-->
-<!--<option ng-repeat="animal in data.animals" value="{{animal.name}}">{{animal.name}}</option>-->
+<!--<select name="pick_animal" id="pick_animal" ng-model="animal">-->
+<!--<option ng-options="animal for animal.name in animals" value="{{animal.name}}">{{animal.name}}</option>-->
 <!--</select>-->
 <!--</form>-->
 <!--<tt>You Selected: {{data.pick_animal}}</tt>-->
+
+<!--ng-change="getAnimal(data.pick_animal)"-->
+<!--don't need name or id-->
