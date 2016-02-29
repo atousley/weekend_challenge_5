@@ -52,6 +52,10 @@ a {
     float: right;
 }
 
+.dropdown option {
+    text-transform: capitalize;
+}
+
 .animalInfo {
     margin-bottom: 5%;
 }

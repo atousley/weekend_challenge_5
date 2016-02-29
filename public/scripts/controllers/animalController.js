@@ -4,18 +4,18 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
     $scope.dataFactory = DataFactory;
 
     $scope.animals = [
-        {name: 'dog'},
-        {name: 'cat'},
-        {name: 'smallfurry'},
-        {name: 'reptile'},
-        {name: 'bird'},
-        {name: 'horse'},
-        {name: 'pig'},
-        {name: 'barnyard'}
+        {id: 'dog', name: 'Dogs'},
+        {id: 'cat', name: 'Cats'},
+        {id: 'smallfurry', name: "Small 'n Furry"},
+        {id: 'reptile', name: 'Reptiles'},
+        {id: 'bird', name: 'Birds'},
+        {id: 'horse', name: 'Horses'},
+        {id: 'pig', name: 'Pigs'},
+        {id: 'barnyard', name: 'Other Farm Animals'}
     ];
 
     $scope.getAnimal = function () {
-        var animalType = $scope.animal_list.name;
+        var animalType = $scope.animal_list.id;
         $scope.showThis = true;
         $scope.message = '';
         petFinder(animalType);
@@ -59,8 +59,3 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
         $scope.message = ('Added to Favorites!');
     }
 }]);
-
-
-//
-//
-//}]);

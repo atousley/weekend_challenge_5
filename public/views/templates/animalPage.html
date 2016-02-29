@@ -3,11 +3,10 @@
         <form>
         <label>Pick an Animal Type:
         <select ng-model="animal_list" ng-options="animal.name for animal in animals" ng-change="getAnimal()">
-            <option  value="">---Select---</option>
+            <option  value="">-------Select-------</option>
         </select>
         </label>
         </form>
-        <tt>You Selected: {{animal_list.name}}</tt>
     </div>
 
     <div ng-if="showThis == true">
