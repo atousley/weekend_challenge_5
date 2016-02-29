@@ -6,10 +6,11 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
     $scope.data = {};
 
     $scope.getAnimal = function () {
-        var animalType = $scope.animal;
+        var animalType = $scope.animal_list;
         console.log(animalType);
 
         $scope.showThis = true;
+        $scope.message = '';
 
         petFinder(animalType);
 
@@ -53,7 +54,7 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 
         $scope.dataFactory.addFavorite(animal, breed, photo, name, age, sex, description, city, state);
 
-        console.log('working');
+        $scope.message = ('Added to Favorites!');
     }
 }]);
 

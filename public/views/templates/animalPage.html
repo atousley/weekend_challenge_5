@@ -1,7 +1,7 @@
 <h1>Find a Pet</h1>
     <div class="dropdown">
         <form>
-            <select name="animal_list" ng-change="getAnimal()" ng-model="animal">
+            <select ng-change="getAnimal()" ng-model="animal_list">
                 <option value="">Select Pet Type</option>
                 <option value="dog">Dog</option>
                 <option value="cat">Cat</option>
@@ -17,6 +17,7 @@
 
     <div ng-if="showThis == true">
         <button ng-click="favorite()">Add To Favorites!</button>
+        <p>{{message}}</p>
 
         <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
          <img ng-src="{{animal.media.photos.photo[2].$t}}" />
