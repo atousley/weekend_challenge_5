@@ -1,25 +1,55 @@
-img {
-    height: 250px;
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
-li {
-    list-style-type: none;
+body {
+    margin: 5%;
 }
 
-.navMain {
-    margin-top: 25px;
+.homePage {
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.homePage img {
+    max-width: 40%;
+}
+
+.animalImg {
+    display: block;
+    max-width: 25%;
+    height: auto;
+}
+
+.navMain ul {
+    margin-top: 5%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+
+
 }
 
 .navMain li {
+    list-style-type: none;
     display: inline;
-    margin: 15px;
+    margin: 1%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 .count li {
-    color: black;
+    list-style-type: none;
+    color: #000;
     font-size: 18px;
+    float: right;
 }
 
 .animalInfo {
-    margin-bottom: 25px;
+    margin-bottom: 5%;
 }

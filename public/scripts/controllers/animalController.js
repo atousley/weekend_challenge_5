@@ -7,16 +7,10 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
 
     $scope.getAnimal = function () {
         var animalType = $scope.animal_list;
-        console.log(animalType);
-
         $scope.showThis = true;
         $scope.message = '';
-
         petFinder(animalType);
-
     };
-
-    //console.log($scope.data);
 
         function petFinder(animal) {
             var key = '705cf21bd32eabe8c89315ec944817be';
@@ -34,7 +28,6 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
             $http.jsonp(request).then(
                 function(response) {
                     $scope.animal = response.data.petfinder.pet;
-                    console.log($scope.animal);
                 }
             );
         }
@@ -57,7 +50,6 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
         $scope.message = ('Added to Favorites!');
     }
 }]);
-
 
 
 //        animal: null,

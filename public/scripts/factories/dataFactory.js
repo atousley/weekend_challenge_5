@@ -3,21 +3,16 @@ myApp.factory('DataFactory', ['$http', function($http) {
     var favorites = undefined;
 
     var postFavorite = function(data) {
-        //console.log(data);
         $http.post('/data', data).then(function(response) {
-            console.log('posting', response);
         });
     };
 
     var getFavorites = function() {
-        console.log('get function firing');
         var promise = $http.get('/data').then(function(response) {
             favorites = response.data;
-            console.log('response: ', favorites);
         });
         return promise;
     };
-
 
     var publicApi = {
         favoriteList: function() {
@@ -38,7 +33,6 @@ myApp.factory('DataFactory', ['$http', function($http) {
             favorite.city = city;
             favorite.state = state;
 
-            //console.log(favorite);
             postFavorite(favorite);
         }
 
