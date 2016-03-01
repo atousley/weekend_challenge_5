@@ -13,7 +13,6 @@
     <div ng-if="showThis == true">
         <button ng-click="favorite()">Add To Favorites!</button>
         <p>{{message}}</p>
-
         <h2>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}} <br>Name: {{animal.name.$t}}</h2>
         <img class="animalImg" ng-src="{{animal.media.photos.photo[2].$t}}" />
         <div class="info_container">

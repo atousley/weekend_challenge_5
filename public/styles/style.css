@@ -82,8 +82,12 @@ a:hover {
     margin-top: 1%;
 }
 
-.animalPage, .animalInfo h2 {
+.animalInfo h2 {
     margin-top: 2%;
+}
+
+.animalPage h2 {
+    margin-top: 3%;
 }
 
 .animalPage {
