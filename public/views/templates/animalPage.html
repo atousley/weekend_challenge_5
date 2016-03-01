@@ -1,11 +1,12 @@
-<h1>Find a Pet</h1>
+<div class="animalPage">
+    <h1>Find a Pet</h1>
     <div class="dropdown">
         <form>
-        <label>Pick an Animal Type:
-        <select ng-model="animal_list" ng-options="animal.name for animal in animals" ng-change="getAnimal()">
-            <option  value="">-------Select-------</option>
-        </select>
-        </label>
+            <label>Pick an Animal Type:
+                <select ng-model="animal_list" ng-options="animal.name for animal in animals" ng-change="getAnimal()">
+                    <option  value="">-------Select-------</option>
+                </select>
+            </label>
         </form>
     </div>
 
@@ -13,14 +14,15 @@
         <button ng-click="favorite()">Add To Favorites!</button>
         <p>{{message}}</p>
 
-        <h1>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}}</h1>
-         <img class="animalImg" ng-src="{{animal.media.photos.photo[2].$t}}" />
-            <div class="info_container">
-                <h2>Name: {{animal.name.$t}}</h2>
-                <h3>Age: {{animal.age.$t}}</h3>
-                <h3>Sex: {{animal.sex.$t}}</h3>
-                <p>Description: {{animal.description.$t}}</p>
-                <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
-            </div>
+        <h2>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}} <br>Name: {{animal.name.$t}}</h2>
+        <img class="animalImg" ng-src="{{animal.media.photos.photo[2].$t}}" />
+        <div class="info_container">
+            <h3>Age: {{animal.age.$t}}</h3>
+            <h3>Sex: {{animal.sex.$t}}</h3>
+            <p>Description: {{animal.description.$t}}</p>
+            <p>City: {{animal.contact.city.$t}} State: {{animal.contact.state.$t}}</p>
+        </div>
     </div>
+</div>
+
 

@@ -1,12 +1,14 @@
-<h1>My Faves</h1>
+<div class="favesPage">
+    <h1>My Faves</h1>
 
     <div class="animalInfo" ng-repeat="favorite in favorites">
-        <h1>{{favorite.id}}.</h1>
-        <h1> {{favorite.animal}} Type: {{favorite.breed}}</h1>
+        <h2>{{favorite.id}}. {{favorite.animal}} Type: {{favorite.breed}} <br>Name: {{favorite.name}}</h2>
         <img class="animalImg" ng-src="{{favorite.photo}}" />
-        <h2>Name: {{favorite.name}}</h2>
-        <h3>Age: {{favorite.age}}</h3>
-        <h3>Sex: {{favorite.sex}}</h3>
-        <p>Description: {{favorite.description | limitTo: charLimit}}</p>
-        <p>City: {{favorite.contact_city}} State: {{favorite.contact_state}}</p>
+        <div class="info_container">
+            <h3>Age: {{favorite.age}}</h3>
+            <h3>Sex: {{favorite.sex}}</h3>
+            <p>Description: {{favorite.description | limitTo: charLimit}}</p>
+            <p>City: {{favorite.contact_city}} State: {{favorite.contact_state}}</p>
+        </div>
     </div>
+</div>
