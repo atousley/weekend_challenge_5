@@ -44,17 +44,21 @@ myApp.controller('AnimalController', ['$scope', 'DataFactory','$http', function(
         petFinder();
 
     $scope.favorite = function() {
+        //create an object for these and then just pass the object (eye roll emoji)
         var animal = $scope.animal.animal.$t;
         var breed = $scope.animal.breeds.breed.$t;
         var age = $scope.animal.age.$t;
         var sex = $scope.animal.sex.$t;
         var photo = $scope.animal.media.photos.photo[2].$t;
         var description = $scope.animal.description.$t;
+        //limit the characters going to the server by using .subtstring(0, 99)
         var city = $scope.animal.contact.city.$t;
         var state = $scope.animal.contact.state.$t;
         var name = $scope.animal.name.$t;
 
         $scope.dataFactory.addFavorite(animal, breed, photo, name, age, sex, description, city, state);
+        //return the addFavorites function from factory to have access to .then in this line
+        //get the length here for the count in nav.
 
         $scope.message = ('Added to Favorites!');
     }

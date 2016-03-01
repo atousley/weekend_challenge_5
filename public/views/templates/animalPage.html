@@ -4,17 +4,23 @@
         <form>
             <label>Pick an Animal Type:
                 <select ng-model="animal_list" ng-options="animal.name for animal in animals" ng-change="getAnimal()">
+                   <!--add animal as animal.name for ani... to be clearer on where it's going-->
+                    <!--can add a track by here to set the value to something specific if using a submit btn-->
+                    <!--benefits of submit btn, you can hit the btn multiple times w/o going back to the drpdwn-->
                     <option  value="">-------Select-------</option>
                 </select>
             </label>
         </form>
     </div>
 
-    <div ng-if="showThis == true">
-        <button ng-click="favorite()">Add To Favorites!</button>
-        <p>{{message}}</p>
+    <div ng-if="showThis">
+        <!--this didn't need == true, saying ng-if="" assumes it is true-->
+        <button ng-click="favorite()">Add To Favorites!</button> <br>
+        <p class="btn_msg">{{message}}</p>
+        <!--consider a class change on btn to have btn text change to what current msg is-->
         <h2>{{animal.animal.$t}} Type: {{animal.breeds.breed.$t}} <br>Name: {{animal.name.$t}}</h2>
         <img class="animalImg" ng-src="{{animal.media.photos.photo[2].$t}}" />
+        <!--add ng-if for imgs-->
         <div class="info_container">
             <h3>Age: {{animal.age.$t}}</h3>
             <h3>Sex: {{animal.sex.$t}}</h3>

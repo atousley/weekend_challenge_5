@@ -70,11 +70,21 @@ a:hover {
 
 .animalPage button {
     float: right;
-    margin: 1%;
+    /*margin: 1% 0;*/
     border: 1px solid;
     padding: 3px;
     border-radius: 5px;
     background-color: lightseagreen;
+    outline: none;
+}
+
+.btn_msg {
+    float: right;
+    /*margin: 1% 0;*/
+}
+
+.btn_msg, .animalPage button {
+    display: block;
 }
 
 .info_container {

@@ -6,6 +6,8 @@ var pg = require('pg');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+//break these out into connection module and fave route
+
 var connectionString = '';
 if(process.env.DATABASE_URL != undefined) {
     connectionString = process.env.DATABASE_URL + 'ssl';
@@ -34,7 +36,6 @@ app.get('/data', function(req, res) {
 });
 
 app.post('/data', function(req, res) {
-    //res.send(req.params.number);
     var addFavorite = {
         animal: req.body.animal,
         breed: req.body.breed,
